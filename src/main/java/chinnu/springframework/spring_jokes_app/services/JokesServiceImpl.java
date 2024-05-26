@@ -10,13 +10,11 @@ public class JokesServiceImpl implements JokeService{
 
     private final ChuckNorrisQuotes chuckNorrisQuotes;
 
-    @Autowired
-    public JokesServiceImpl(ChuckNorrisQuotes chuckNorrisQuotes) {
-        this.chuckNorrisQuotes = chuckNorrisQuotes;
+    public JokesServiceImpl() {
+        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
     }
 
-    @Override
     public String getJoke() {
-        return chuckNorrisQuotes;
+        return chuckNorrisQuotes.getRandomQuote();
     }
 }
